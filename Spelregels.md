@@ -6,7 +6,7 @@
 Welkom in de wereld van deeg, suiker en drukte! In dit spel strijden de spelers als bakkers om ingrediënten te verzamelen, lekkernijen te bakken en bestellingen te voltooien. Alleen degene die zijn werkbank het slimst organiseert en zijn klanten het snelst bedient, komt als winnaar uit de oven.
 
 ## Aantal spelers
-2–4 spelers
+3–4 spelers
 
 ## Doel van het spel
 Het doel is om zoveel mogelijk bestellingen te voltooien binnen 10 speelrondes.  
@@ -59,6 +59,7 @@ De speler met de meeste voltooide bestellingen punten wint. Bij een gelijke stan
 - Het kan slim zijn om ingrediënten te sparen zodat je meerdere producten tegelijk kunt maken.  
 - Let op welke bestellingen nog beschikbaar zijn en plan vooruit.  
 - Beheer je handlimiet goed: soms is het beter om direct om te ruilen dan om te wachten.  
+
 
 
 
