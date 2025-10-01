@@ -1,10 +1,9 @@
 # [Titel nog te bepalen]
 
-## Credits
-- Ontwikkeld door: Wimme, Rodrigo, Gerben en Jalil  
+## Ontwikkeld door: Wimme, Rodrigo, Gerben en Jalil  
 
 ## Overzicht
-Dit is een tabletop game dat zich afspeelt in een bakkerij. De spelers stappen in de rol van bakkers en volgen de workflow van een echte bakker: ingrediënten verzamelen, producten maken en bestellingen afronden. De speler die het meest efficiënt kan bakken en leveren, wint het spel.
+Welkom in de wereld van deeg, suiker en drukte! In dit spel strijden de spelers als bakkers om ingrediënten te verzamelen, lekkernijen te bakken en bestellingen te voltooien. Alleen degene die zijn werkbank het slimst organiseert en zijn klanten het snelst bedient, komt als winnaar uit de oven.
 
 ## Aantal spelers
 2–4 spelers
@@ -53,3 +52,4 @@ De speler met de meeste voltooide bestellingen wint. Bij een gelijke stand wint 
 - Het kan slim zijn om ingrediënten te sparen zodat je meerdere producten tegelijk kunt maken.  
 - Let op welke bestellingen nog beschikbaar zijn en plan vooruit.  
 - Beheer je handlimiet goed: soms is het beter om direct om te ruilen dan om te wachten.  
+
