@@ -1,6 +1,6 @@
 # Finish the order
 
-## Ontwikkeld door: Wimme, Rodrigo, Gerben en Jalil
+## Ontwikkeld door: Wimme, Rodrigo, Gerben, Jalil en Kean
 
 ## Overzicht
 
@@ -93,3 +93,4 @@ De speler met de meeste voltooide bestellingspunten wint. Bij een gelijke stand 
 * Het kan slim zijn om ingrediënten te sparen zodat je meerdere producten tegelijk kunt maken.
 * Let op welke bestellingen nog beschikbaar zijn en plan vooruit.
 * Beheer je handlimiet goed: soms is het beter om direct om te ruilen dan om te wachten.
+
