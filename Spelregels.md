@@ -72,7 +72,6 @@ Het spel wordt gespeeld in beurten, met de klok mee. Elke beurt bestaat uit de v
 3. **Ingrediënten omruilen voor een product**
   
    * Als een speler voldoende ingrediënten heeft voor een bepaald product, mag hij/zij deze kaarten afleggen en een productkaart nemen van de bijbehorende productstapel.
-   * 
    * De gebruikte ingrediëntkaarten worden onderaan de ingrediëntstapel gelegd.
    * De productkaart mag je **afgedekt** op tafel leggen. Zo ziet de rest niet welke producten je al hebt. De productkaart telt **niet** mee voor de limiet van 9 handkaarten.
 
@@ -90,12 +89,14 @@ Daarna gaat de beurt naar de volgende speler.
 
 Het spel eindigt na 10 speelrondes.
 De speler met de meeste voltooide bestellingspunten wint. Bij een gelijke stand wint de speler met de meeste overgebleven producten.
+Elk afgemaakt product op't einde van het spel dat je nog heb is een half punt waard.
 
 ## Spelgids en tips
 
 * Het kan slim zijn om ingrediënten te sparen zodat je meerdere producten tegelijk kunt maken.
 * Let op welke bestellingen nog beschikbaar zijn en plan vooruit.
 * Beheer je handlimiet goed: soms is het beter om direct om te ruilen dan om te wachten.
+
 
 
 
