@@ -40,7 +40,7 @@ Om producten te maken heb je de volgende ingrediënten nodig:
 * **Brood** = Bloem + Water (2 ingrediënten)
 * **Croissant** = Bloem + Boter + Melk (3 ingrediënten)
 * **Koffiekoek** = Water + Suiker + Boter (3 ingrediënten)
-* **Taart** = Bloem + Suiker + Ei + Boter + Melk (5 ingrediënten)
+* **Taart** = Bloem + Suiker + 2x Ei + Melk (5 ingrediënten)
 
 ## Bestellingen
 
@@ -93,5 +93,6 @@ De speler met de meeste voltooide bestellingspunten wint. Bij een gelijke stand 
 * Het kan slim zijn om ingrediënten te sparen zodat je meerdere producten tegelijk kunt maken.
 * Let op welke bestellingen nog beschikbaar zijn en plan vooruit.
 * Beheer je handlimiet goed: soms is het beter om direct om te ruilen dan om te wachten.
+
 
 
