@@ -55,12 +55,14 @@ Zodra een speler een bestelling voltooit en deze wegneemt, wordt er onmiddellijk
 ## Spelverloop
 
 Het spel wordt gespeeld in beurten, met de klok mee. Elke beurt bestaat uit de volgende stappen:
+- **Iedere speler heeft 1 minuut voor zijn beurt, er word getimed.**
 
 1. **Ingrediënt pakken**
 
-   * Elke speler start het spel met **4 ingrediëntkaarten**.
-   * Aan het begin van je beurt trek je 2 ingrediëntkaart van de gezamenlijke stapel.
-   * Een speler mag *op het einde van zijn of haar beurt* maximaal 7 ingrediëntkaarten in de hand hebben. Heb je er meer, dan moet je proberen te ruilen, bakken of weggeven voor het einde van je beurt.
+   * Elke speler start het spel met **5 ingrediëntkaarten**.
+   * Aan het begin van je beurt trek je 3 ingrediëntkaart van de gezamenlijke stapel.
+   * Een speler mag *op het einde van zijn of haar beurt* maximaal 9 ingrediëntkaarten in de hand hebben. Heb je er meer, dan moet je proberen te ruilen, bakken of weggeven voor het einde van je beurt.
+   * Je mag 2 dezelfde kaarten onderaan de stapel leggen om in te wisselen voor de bovenste kaart.
 
 2. **Ruilen**
 
@@ -68,10 +70,11 @@ Het spel wordt gespeeld in beurten, met de klok mee. Elke beurt bestaat uit de v
    * Alle soorten ruilacties zijn toegestaan: 3 ingrediënten voor een compleet product, beloftes, weggeven, ...
 
 3. **Ingrediënten omruilen voor een product**
-
+  
    * Als een speler voldoende ingrediënten heeft voor een bepaald product, mag hij/zij deze kaarten afleggen en een productkaart nemen van de bijbehorende productstapel.
+   * 
    * De gebruikte ingrediëntkaarten worden onderaan de ingrediëntstapel gelegd.
-   * De productkaart mag je **afgedekt** op tafel leggen. Zo ziet de rest niet welke producten je al hebt. De productkaart telt **niet** mee voor de limiet van 7 handkaarten.
+   * De productkaart mag je **afgedekt** op tafel leggen. Zo ziet de rest niet welke producten je al hebt. De productkaart telt **niet** mee voor de limiet van 9 handkaarten.
 
 4. **Producten inleveren voor een bestelling**
 
@@ -93,6 +96,7 @@ De speler met de meeste voltooide bestellingspunten wint. Bij een gelijke stand 
 * Het kan slim zijn om ingrediënten te sparen zodat je meerdere producten tegelijk kunt maken.
 * Let op welke bestellingen nog beschikbaar zijn en plan vooruit.
 * Beheer je handlimiet goed: soms is het beter om direct om te ruilen dan om te wachten.
+
 
 
 
