@@ -39,7 +39,7 @@ Om producten te maken heb je de volgende ingrediënten nodig:
 
 * **Brood** = Bloem + Water (2 ingrediënten)
 * **Croissant** = Bloem + Boter + Melk (3 ingrediënten)
-* **Koffiekoek** = Bloem + Suiker + Boter (3 ingrediënten)
+* **Koffiekoek** = Water + Suiker + Boter (3 ingrediënten)
 * **Taart** = Bloem + Suiker + Ei + Boter + Melk (5 ingrediënten)
 
 ## Bestellingen
@@ -58,8 +58,8 @@ Het spel wordt gespeeld in beurten, met de klok mee. Elke beurt bestaat uit de v
 
 1. **Ingrediënt pakken**
 
-   * Elke speler start het spel met **2 ingrediëntkaarten**.
-   * Aan het begin van je beurt trek je 1 ingrediëntkaart van de gezamenlijke stapel.
+   * Elke speler start het spel met **4 ingrediëntkaarten**.
+   * Aan het begin van je beurt trek je 2 ingrediëntkaart van de gezamenlijke stapel.
    * Een speler mag *op het einde van zijn of haar beurt* maximaal 7 ingrediëntkaarten in de hand hebben. Heb je er meer, dan moet je proberen te ruilen, bakken of weggeven voor het einde van je beurt.
 
 2. **Ruilen**
@@ -93,4 +93,5 @@ De speler met de meeste voltooide bestellingspunten wint. Bij een gelijke stand 
 * Het kan slim zijn om ingrediënten te sparen zodat je meerdere producten tegelijk kunt maken.
 * Let op welke bestellingen nog beschikbaar zijn en plan vooruit.
 * Beheer je handlimiet goed: soms is het beter om direct om te ruilen dan om te wachten.
+
 
