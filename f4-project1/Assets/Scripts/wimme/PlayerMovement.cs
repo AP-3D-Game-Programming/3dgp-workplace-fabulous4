@@ -1,6 +1,7 @@
 using UnityEngine;
+using System.Collections;
 
-[RequireComponent(typeof(Rigidbody))]
+
 public class PlayerMovement : MonoBehaviour
 {
    
@@ -53,8 +54,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         animator.SetFloat("Speed", moveDirection.magnitude);
-        
-
 
     }
 
@@ -66,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + move);
     }
 
-    private System.Collections.IEnumerator PerformDash()
+    private IEnumerator PerformDash()
     {
         isDashing = true;
         lastDashTime = Time.time;
@@ -91,8 +90,6 @@ public class PlayerMovement : MonoBehaviour
         rb.useGravity = true;
         isDashing = false;
     }
-
-    // --- Gronddetectie ---
     void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Raakt: " + collision.gameObject.name);
