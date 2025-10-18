@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;        
     public float rotationSpeed = 10f;   
     public float jumpForce = 5f;        
-    [Header("Dash-instellingen")]
+
     public float dashForce = 15f;       
     public float dashDuration = 0.2f;   
     public float dashCooldown = 1f;     
