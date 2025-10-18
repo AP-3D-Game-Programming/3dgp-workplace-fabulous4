@@ -12,7 +12,6 @@ public class NPCInteractable : MonoBehaviour
 
     public void Interact()
     {
-        // vind speler (gebruik Tag "Player" op je player GameObject)
         var player = GameObject.FindWithTag("Player");
         if (player == null) return;
 
@@ -21,12 +20,8 @@ public class NPCInteractable : MonoBehaviour
 
         if (inv.HasItem(requiredItem))
         {
-            Debug.Log($"Interact: player has {requiredItem}, start fade+despawn");
+            inv.RemoveItem(requiredItem);
             StartCoroutine(FadeOutAndDespawn());
-        }
-        else
-        {
-            Debug.Log("Interact: player does not have required item");
         }
     }
 

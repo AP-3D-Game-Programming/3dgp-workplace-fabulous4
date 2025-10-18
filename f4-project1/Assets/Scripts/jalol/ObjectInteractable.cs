@@ -1,9 +1,9 @@
-using System;
 using UnityEngine;
 
 public class ObjectInteractable : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public string itemId = "loaf";
+    
     public void Interact()
     {
         var player = GameObject.FindWithTag("Player");
@@ -12,6 +12,14 @@ public class ObjectInteractable : MonoBehaviour
         var inv = player.GetComponent<PlayerInventory>();
         if (inv == null) return;
 
-        inv.AddItem("loaf");
+        inv.AddItem(itemId);
+        
+        var pickup = player.GetComponent<PickUpScript>();
+        if (pickup != null)
+        {
+            pickup.SpawnItemInHand(itemId);
+        }
+        
+        Destroy(gameObject);
     }
 }
