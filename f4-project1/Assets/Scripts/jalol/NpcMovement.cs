@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class NpcMovement : MonoBehaviour
 {
@@ -70,4 +71,5 @@ public class NpcMovement : MonoBehaviour
             Gizmos.DrawLine(previewStart, previewEnd);
         }
     }
+
 }
