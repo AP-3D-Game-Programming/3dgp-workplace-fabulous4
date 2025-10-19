@@ -2394,6 +2394,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fca0a02519b6e4244987c681ede8528a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2029807135}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fca0a02519b6e4244987c681ede8528a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2029807138}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fca0a02519b6e4244987c681ede8528a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2029807137}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fca0a02519b6e4244987c681ede8528a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2029807136}
   m_SourcePrefab: {fileID: 100100000, guid: fca0a02519b6e4244987c681ede8528a, type: 3}
 --- !u!1 &2029807128 stripped
 GameObject:
@@ -2445,6 +2454,11 @@ MonoBehaviour:
   dashForce: 12
   dashDuration: 0
   dashCooldown: 1
+--- !u!4 &2029807131 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8891244130364874969, guid: fca0a02519b6e4244987c681ede8528a, type: 3}
+  m_PrefabInstance: {fileID: 2029807127}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &2029807133
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2488,6 +2502,47 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2029807136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029807128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7773350bc7252242b52eef5f3f0f53c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
+  items: []
+--- !u!114 &2029807137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029807128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55f70cb8f8598c745921d6bcaf5fdb31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteract
+  interactRange: 2
+--- !u!114 &2029807138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029807128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa209107e2fcaea42a33a59f2e9894ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickUpScript
+  holdPos: {fileID: 2029807131}
+  holdOffset: {x: 0.3, y: 0, z: 0.2}
+  itemPrefabs: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
