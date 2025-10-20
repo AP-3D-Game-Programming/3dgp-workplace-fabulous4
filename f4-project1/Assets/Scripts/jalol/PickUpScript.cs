@@ -17,6 +17,8 @@ public class PickUpScript : MonoBehaviour
     private GameObject heldObj;
     private Rigidbody heldObjRb;
     private string currentItemId;
+    public string CurrentItemId => currentItemId;
+
 
     void Update()
     {
@@ -48,7 +50,9 @@ public class PickUpScript : MonoBehaviour
         {
             Destroy(heldObj);
         }
-        
+        Debug.Log($"Trying to spawn {itemId} in hand");
+        Debug.Log($"Spawn mapping: {mapping?.prefab?.name}");
+
         heldObj = Instantiate(mapping.prefab, holdPos.position, holdPos.rotation, holdPos);
         heldObj.transform.localPosition = holdOffset;
         heldObj.transform.localRotation = Quaternion.identity;
@@ -90,9 +94,13 @@ public class PickUpScript : MonoBehaviour
         if (heldObj == null) return;
         
         Destroy(heldObj);
+        // heldObj.transform.parent = null;
+        // heldObjRb.useGravity = true;
+        // heldObjRb.isKinematic = false;
         heldObj = null;
         heldObjRb = null;
         currentItemId = null;
+
     }
 
     void OnDrawGizmosSelected()
