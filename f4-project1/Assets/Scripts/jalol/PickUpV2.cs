@@ -1,22 +1,20 @@
 ﻿using System.Linq;
-using Unity.VisualScripting;
-using UnityEditor.Callbacks;
 using UnityEngine;
-using UnityEngine.UIElements;
 using TMPro;
 
 public class PickUpV2 : MonoBehaviour
 {
     private int scoreCounter = 0;
     public TextMeshProUGUI scoreText;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private GameObject heldObject; // Track the currently held object
+    public float throwForce = 500f;
     void Start()
     {
 
     }
-    // Update is called once per frame
     private bool hold = false;
-    void Update()
+    // Update is called once per frame
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -43,6 +41,7 @@ public class PickUpV2 : MonoBehaviour
 
                             collider.transform.SetParent(this.transform);
                             inv.AddItem(collider.gameObject.name);
+                            heldObject = collider.gameObject; // Set the held object
                             hold = !hold;
                         }
                         else
@@ -69,6 +68,35 @@ public class PickUpV2 : MonoBehaviour
                 }
 
             }
+        }
+
+        // Throw logic
+        if (hold && Input.GetKeyDown(KeyCode.F) && heldObject != null)
+        {
+            // Detach from player
+            heldObject.transform.SetParent(null);
+
+            // Enable collider
+            if (heldObject.TryGetComponent(out Collider col))
+            {
+                col.enabled = true;
+            }
+
+            // Add Rigidbody if not present
+            Rigidbody rb = heldObject.GetComponent<Rigidbody>();
+            if (rb == null)
+            {
+                rb = heldObject.AddComponent<Rigidbody>();
+            }
+            rb.isKinematic = false;
+            rb.useGravity = true;
+
+            // Apply forward force
+            
+            rb.AddForce(transform.forward * throwForce);
+
+            heldObject = null;
+            hold = false;
         }
     }
 }
