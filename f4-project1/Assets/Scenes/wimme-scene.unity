@@ -127,38 +127,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 59201949676845292, guid: fa0206eecc5f7614293ab4d0191f5408, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 59201949676845292, guid: fa0206eecc5f7614293ab4d0191f5408, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 59201949676845292, guid: fa0206eecc5f7614293ab4d0191f5408, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 59201949676845292, guid: fa0206eecc5f7614293ab4d0191f5408, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 59201949676845292, guid: fa0206eecc5f7614293ab4d0191f5408, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 229.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 59201949676845292, guid: fa0206eecc5f7614293ab4d0191f5408, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 274.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 59201949676845292, guid: fa0206eecc5f7614293ab4d0191f5408, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -117.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 59201949676845292, guid: fa0206eecc5f7614293ab4d0191f5408, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -137.13
-      objectReference: {fileID: 0}
     - target: {fileID: 208979379501802631, guid: fa0206eecc5f7614293ab4d0191f5408, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -178,18 +146,6 @@ PrefabInstance:
     - target: {fileID: 1500814601754689429, guid: fa0206eecc5f7614293ab4d0191f5408, type: 3}
       propertyPath: m_Name
       value: UI(bestellingen)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1513643075219905928, guid: fa0206eecc5f7614293ab4d0191f5408, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1513643075219905928, guid: fa0206eecc5f7614293ab4d0191f5408, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1513643075219905928, guid: fa0206eecc5f7614293ab4d0191f5408, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 84
       objectReference: {fileID: 0}
     - target: {fileID: 5569809935687000065, guid: fa0206eecc5f7614293ab4d0191f5408, type: 3}
       propertyPath: m_Pivot.x
@@ -271,31 +227,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6624098548272220768, guid: fa0206eecc5f7614293ab4d0191f5408, type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6624098548272220768, guid: fa0206eecc5f7614293ab4d0191f5408, type: 3}
-      propertyPath: m_fontColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6624098548272220768, guid: fa0206eecc5f7614293ab4d0191f5408, type: 3}
-      propertyPath: m_fontColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6624098548272220768, guid: fa0206eecc5f7614293ab4d0191f5408, type: 3}
-      propertyPath: m_TextWrappingMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6624098548272220768, guid: fa0206eecc5f7614293ab4d0191f5408, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294901760
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa0206eecc5f7614293ab4d0191f5408, type: 3}
+--- !u!1 &656364196 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6954562289967025850, guid: fe963fbab31d20442804337e0924768d, type: 3}
+  m_PrefabInstance: {fileID: 1404019370}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1129605189
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -477,6 +418,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1599918888237743614, guid: fe963fbab31d20442804337e0924768d, type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 2123620785}
+    - target: {fileID: 1599918888237743614, guid: fe963fbab31d20442804337e0924768d, type: 3}
+      propertyPath: obstaclePrefab
+      value: 
+      objectReference: {fileID: 656364196}
     - target: {fileID: 2071246893594374019, guid: fe963fbab31d20442804337e0924768d, type: 3}
       propertyPath: m_Name
       value: room(jalol)
