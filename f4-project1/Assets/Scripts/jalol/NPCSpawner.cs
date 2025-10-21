@@ -38,6 +38,14 @@ public class NPCSpawner : MonoBehaviour
         npc.tag = "NPC";
         currentNPCCount++;
 
+        // Bestelling aanmaken voor deze NPC
+        NPCOrder npcOrder = npc.GetComponent<NPCOrder>();
+        if (npcOrder != null)
+        {
+            npcOrder.npcName = "Klant " + currentNPCCount;
+            npcOrder.CreateOrderOnSpawn();
+        }
+
         NpcMovement movement = npc.GetComponent<NpcMovement>();
         if (movement != null)
         {
