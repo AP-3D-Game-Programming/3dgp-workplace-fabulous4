@@ -1,4 +1,7 @@
+using Unity.VisualScripting;
+using UnityEditor.Callbacks;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PickUpV2 : MonoBehaviour
 {
@@ -7,8 +10,8 @@ public class PickUpV2 : MonoBehaviour
     {
 
     }
-
     // Update is called once per frame
+    public bool hold = false;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -22,7 +25,28 @@ public class PickUpV2 : MonoBehaviour
                     Debug.Log($"[DEBUG] Collided with: {collider.gameObject.name}");
                     if (collider.CompareTag("canPickUp"))
                     {
-                        collider.transform.SetParent(this.transform);
+                        Rigidbody rb = collider.GetComponent<Rigidbody>();
+                        BoxCollider box = collider.GetComponent<BoxCollider>();
+                        if (!hold)
+                        {
+                            if (rb != null)
+                            {
+                                Destroy(rb);
+                                rb.isKinematic = true;
+                                rb.useGravity = false;
+                            }
+
+                            collider.transform.SetParent(this.transform);
+                            hold = !hold;
+                        }
+                        else
+                        {
+                            Rigidbody newRb = collider.gameObject.AddComponent<Rigidbody>();
+                            collider.transform.SetParent(null);
+                            newRb.isKinematic = false;
+                            newRb.useGravity = true;
+                            hold = !hold;
+                        }
                     }
                 }
 

@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: loaf
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b5fa2064f642e77479894aff6c3c5475, type: 3}
+      propertyPath: m_TagString
+      value: canPickUp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -62,6 +66,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b5fa2064f642e77479894aff6c3c5475, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2374274398796619905}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b5fa2064f642e77479894aff6c3c5475, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3670967592217048781}
   m_SourcePrefab: {fileID: 100100000, guid: b5fa2064f642e77479894aff6c3c5475, type: 3}
 --- !u!1 &4155592418079697357 stripped
 GameObject:
@@ -80,6 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ae10e72d53a968438eae2d92cf66315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  itemId: loaf
 --- !u!65 &2374274398796619905
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -101,3 +109,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &3670967592217048781
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4155592418079697357}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
