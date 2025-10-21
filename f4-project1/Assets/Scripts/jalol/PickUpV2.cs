@@ -1,8 +1,5 @@
 ﻿using System.Linq;
-using Unity.VisualScripting;
-using UnityEditor.Callbacks;
 using UnityEngine;
-using UnityEngine.UIElements;
 using TMPro;
 
 public class PickUpV2 : MonoBehaviour
