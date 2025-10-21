@@ -35,7 +35,16 @@ public class NPCSpawner : MonoBehaviour
         if (npcPrefab == null || spawnPoint == null) return;
 
         GameObject npc = Instantiate(npcPrefab, spawnPoint.position, spawnPoint.rotation);
+        npc.tag = "NPC";
         currentNPCCount++;
+
+        // Bestelling aanmaken voor deze NPC
+        NPCOrder npcOrder = npc.GetComponent<NPCOrder>();
+        if (npcOrder != null)
+        {
+            npcOrder.npcName = "Klant " + currentNPCCount;
+            npcOrder.CreateOrderOnSpawn();
+        }
 
         NpcMovement movement = npc.GetComponent<NpcMovement>();
         if (movement != null)
