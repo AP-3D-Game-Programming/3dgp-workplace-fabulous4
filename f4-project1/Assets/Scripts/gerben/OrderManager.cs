@@ -20,19 +20,13 @@ public class OrderManager : MonoBehaviour
         Instance = this;
     }
 
-    public Order CreateNewOrder(string npcName)
+    public void CreateNewOrder(string klantNaam)
     {
-        string chosenItem = possibleOrders[Random.Range(0, possibleOrders.Count)];
-
-        Order newOrder = new Order(npcName, chosenItem);
-        currentOrders.Add(newOrder);
-
+        // Kies random bestelling
+        string bestelling = possibleOrders[Random.Range(0, possibleOrders.Count)];
         var newText = Instantiate(orderTemplate, orderListParent);
-        newText.text = $"{npcName}: {chosenItem}";
+        newText.text = klantNaam + ": " + bestelling;
         newText.gameObject.SetActive(true);
-        newOrder.uiElement = newText;
-
-        return newOrder;
     }
     public void RemoveOrder(Order order)
     {
@@ -59,7 +53,10 @@ public class OrderManager : MonoBehaviour
     {
         return currentOrders.Find(o => o.npcName == npcName);
     }
-
+    // void Start()
+    // {
+    //     CreateNewOrder("TestKlant");
+    // }
 
 }
 
