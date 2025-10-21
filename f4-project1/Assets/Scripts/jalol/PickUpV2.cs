@@ -1,3 +1,4 @@
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor.Callbacks;
 using UnityEngine;
@@ -27,6 +28,7 @@ public class PickUpV2 : MonoBehaviour
                     {
                         Rigidbody rb = collider.GetComponent<Rigidbody>();
                         BoxCollider box = collider.GetComponent<BoxCollider>();
+                        PlayerInventory inv = gameObject.GetComponent<PlayerInventory>();
                         if (!hold)
                         {
                             if (rb != null)
@@ -37,14 +39,25 @@ public class PickUpV2 : MonoBehaviour
                             }
 
                             collider.transform.SetParent(this.transform);
+                            inv.AddItem(collider.gameObject.name);
                             hold = !hold;
                         }
                         else
                         {
-                            Rigidbody newRb = collider.gameObject.AddComponent<Rigidbody>();
-                            collider.transform.SetParent(null);
-                            newRb.isKinematic = false;
-                            newRb.useGravity = true;
+                            var npc = colliderArray.FirstOrDefault(x => x.CompareTag("NPC"));
+                            if (npc != null)
+                            {
+                                NPCInteractable npcInteract = npc.GetComponent<NPCInteractable>();
+                                npcInteract.Interact();
+                                Destroy(collider.gameObject);
+                            }
+                            else
+                            {
+                                Rigidbody newRb = collider.gameObject.AddComponent<Rigidbody>();
+                                collider.transform.SetParent(null);
+                                newRb.isKinematic = false;
+                                newRb.useGravity = true;
+                            }
                             hold = !hold;
                         }
                     }

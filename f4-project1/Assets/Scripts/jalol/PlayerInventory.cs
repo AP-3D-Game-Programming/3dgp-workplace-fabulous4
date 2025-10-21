@@ -12,11 +12,11 @@ public class PlayerInventory : MonoBehaviour
 
     public void AddItem(string itemId)
     {
+        Debug.Log("Test");
         if (items == null) items = new List<string>();
-        if (!items.Contains(itemId))
-        {
-            items.Add(itemId);
-        }
+        Debug.Log($"[DEBUG] {itemId} added to inventory");
+        items.Add(itemId);
+
     }
 
     public void RemoveItem(string itemId)
