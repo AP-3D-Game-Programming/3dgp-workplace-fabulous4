@@ -35,6 +35,7 @@ public class NPCSpawner : MonoBehaviour
         if (npcPrefab == null || spawnPoint == null) return;
 
         GameObject npc = Instantiate(npcPrefab, spawnPoint.position, spawnPoint.rotation);
+        npc.tag = "NPC";
         currentNPCCount++;
 
         // Bestelling aanmaken voor deze NPC
