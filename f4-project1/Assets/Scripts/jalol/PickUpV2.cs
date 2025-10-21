@@ -3,9 +3,12 @@ using Unity.VisualScripting;
 using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.UIElements;
+using TMPro;
 
 public class PickUpV2 : MonoBehaviour
 {
+    private int scoreCounter = 0;
+    public TextMeshProUGUI scoreText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -50,6 +53,8 @@ public class PickUpV2 : MonoBehaviour
                                 NPCInteractable npcInteract = npc.GetComponent<NPCInteractable>();
                                 npcInteract.Interact();
                                 Destroy(collider.gameObject);
+                                scoreText.text = $"Score: {++scoreCounter}";
+
                             }
                             else
                             {
