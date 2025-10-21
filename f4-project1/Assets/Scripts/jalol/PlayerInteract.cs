@@ -27,14 +27,6 @@ public class PlayerInteract : MonoBehaviour
                     continue;
                 }
 
-                ObjectInteractable obj = collider.GetComponent<ObjectInteractable>();
-                if (obj == null) obj = collider.GetComponentInParent<ObjectInteractable>();
-                if (obj == null) obj = collider.GetComponentInChildren<ObjectInteractable>();
-
-                if (obj != null)
-                {
-                    obj.Interact();
-                }
             }
         }
     }
