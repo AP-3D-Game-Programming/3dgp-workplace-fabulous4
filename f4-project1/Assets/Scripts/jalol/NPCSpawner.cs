@@ -45,6 +45,7 @@ public class NPCSpawner : MonoBehaviour
             npcOrder.npcName = "Klant " + currentNPCCount;
             npcOrder.CreateOrderOnSpawn();
         }
+        
 
         NpcMovement movement = npc.GetComponent<NpcMovement>();
         if (movement != null)
