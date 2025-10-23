@@ -14,9 +14,13 @@ public class NpcMovement : MonoBehaviour
     private Vector3 targetPosition;
     private bool hasArrived = false;
     private float waitTimer = 0f;
+    private Animator animator;
+
 
     void Start()
     {
+        animator = GetComponent<Animator>();
+
         if (spawnPoint != null)
         {
             transform.position = spawnPoint.position;
@@ -30,10 +34,12 @@ public class NpcMovement : MonoBehaviour
     {
         if (!hasArrived)
         {
+            
             MoveToTarget();
         }
         else
         {
+            
             WaitAtTarget();
         }
     }
@@ -41,10 +47,14 @@ public class NpcMovement : MonoBehaviour
     private void MoveToTarget()
     {
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-
+        animator.SetBool("Arrived", false);
+        Debug.Log($"Walking: {false}");
         if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
         {
+
             hasArrived = true;
+            Debug.Log($"Walking: {true}");
+            animator.SetBool("Arrived", true);
             transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y - 90f, transform.eulerAngles.z);
             waitTimer = 0f;
         }
@@ -52,6 +62,8 @@ public class NpcMovement : MonoBehaviour
 
     private void WaitAtTarget()
     {
+        Debug.Log($"Walking: {true}");
+        animator.SetBool("Arrived", true);
         waitTimer += Time.deltaTime;
         // Hier kun je eventueel interactie toevoegen na het wachten
     }
