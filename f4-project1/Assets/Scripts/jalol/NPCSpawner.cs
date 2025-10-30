@@ -63,5 +63,6 @@ public class NPCSpawner : MonoBehaviour
     void OnNPCDespawned()
     {
         currentNPCCount--;
+        
     }
 }

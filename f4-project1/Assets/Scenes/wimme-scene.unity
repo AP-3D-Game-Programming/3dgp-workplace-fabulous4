@@ -419,9 +419,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1599918888237743614, guid: fe963fbab31d20442804337e0924768d, type: 3}
+      propertyPath: holdPos
+      value: 
+      objectReference: {fileID: 1879706456}
+    - target: {fileID: 1599918888237743614, guid: fe963fbab31d20442804337e0924768d, type: 3}
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 2123620785}
+    - target: {fileID: 1599918888237743614, guid: fe963fbab31d20442804337e0924768d, type: 3}
+      propertyPath: holdOffset.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1599918888237743614, guid: fe963fbab31d20442804337e0924768d, type: 3}
       propertyPath: obstaclePrefab
       value: 
@@ -570,6 +578,11 @@ Transform:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 59201949676845292, guid: fa0206eecc5f7614293ab4d0191f5408, type: 3}
   m_PrefabInstance: {fileID: 643003679}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1879706456 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7995024885621143879, guid: fe963fbab31d20442804337e0924768d, type: 3}
+  m_PrefabInstance: {fileID: 1404019370}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1884044602
 GameObject:
