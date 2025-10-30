@@ -20,15 +20,18 @@ public class PickUpV2 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            float interactRange = 2f;
+            Debug.Log("Interacted with E");
+            float interactRange = 5f;
             Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
             foreach (Collider collider in colliderArray)
             {
                 if (collider.gameObject != gameObject) // skip jezelf
                 {
                     Debug.Log($"[DEBUG] Collided with: {collider.gameObject.name}");
+                    Debug.Log($"[DEBUG] Collider tag: {collider.gameObject.tag}");
                     if (collider.CompareTag("canPickUp"))
                     {
+                        Debug.Log("Found item with canPickUp tag");
                         Rigidbody rb = collider.GetComponent<Rigidbody>();
                         BoxCollider box = collider.GetComponent<BoxCollider>();
                         PlayerInventory inv = gameObject.GetComponent<PlayerInventory>();
