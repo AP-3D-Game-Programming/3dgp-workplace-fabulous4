@@ -1,19 +1,23 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 
 public class NpcMovement : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float moveSpeed = 2f;
     public float walkDistance = 5f;
-    public float waitTime = 2f;
-
+    public GameObject waypoint;
+    
     [Header("Spawn Settings")]
     public Transform spawnPoint;
-
+    public GameObject player;
     private Vector3 targetPosition;
     private bool hasArrived = false;
     private float waitTimer = 0f;
+    private Collider[] colliderArray;
+    private float interactRange = 2f;
 
     void Start()
     {
@@ -23,12 +27,13 @@ public class NpcMovement : MonoBehaviour
             transform.rotation = spawnPoint.rotation;
         }
 
-        targetPosition = transform.position + Vector3.forward * walkDistance;
+        targetPosition = waypoint.transform.position;
     }
 
     void Update()
     {
-        if (!hasArrived)
+        colliderArray = Physics.OverlapSphere(transform.position, interactRange);
+        if (!hasArrived && colliderArray.FirstOrDefault(x => x.gameObject.tag == "NPC" && x.gameObject != this.gameObject) == null)
         {
             MoveToTarget();
         }
@@ -45,8 +50,7 @@ public class NpcMovement : MonoBehaviour
         if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
         {
             hasArrived = true;
-            transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y - 90f, transform.eulerAngles.z);
-            waitTimer = 0f;
+            transform.LookAt(player.transform);
         }
     }
 
@@ -55,21 +59,4 @@ public class NpcMovement : MonoBehaviour
         waitTimer += Time.deltaTime;
         // Hier kun je eventueel interactie toevoegen na het wachten
     }
-
-    void OnDrawGizmosSelected()
-    {
-        if (spawnPoint != null)
-        {
-            Vector3 previewStart = spawnPoint.position;
-            Vector3 previewEnd = previewStart + Vector3.forward * walkDistance;
-
-            Gizmos.color = Color.cyan;
-            Gizmos.DrawSphere(previewStart, 0.3f);
-            Gizmos.color = Color.magenta;
-            Gizmos.DrawSphere(previewEnd, 0.3f);
-            Gizmos.color = Color.white;
-            Gizmos.DrawLine(previewStart, previewEnd);
-        }
-    }
-
 }
