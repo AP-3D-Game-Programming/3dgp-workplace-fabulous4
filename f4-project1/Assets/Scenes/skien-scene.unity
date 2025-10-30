@@ -720,13 +720,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3742286231436797112, guid: d4180ab029696f1449669bfa3ff59aef, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742286231436797112, guid: d4180ab029696f1449669bfa3ff59aef, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -50
+      objectReference: {fileID: 0}
     - target: {fileID: 4116511586190143234, guid: d4180ab029696f1449669bfa3ff59aef, type: 3}
       propertyPath: m_fontSize
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4116511586190143234, guid: d4180ab029696f1449669bfa3ff59aef, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116511586190143234, guid: d4180ab029696f1449669bfa3ff59aef, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116511586190143234, guid: d4180ab029696f1449669bfa3ff59aef, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116511586190143234, guid: d4180ab029696f1449669bfa3ff59aef, type: 3}
       propertyPath: m_fontSizeBase
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116511586190143234, guid: d4180ab029696f1449669bfa3ff59aef, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281874488
       objectReference: {fileID: 0}
     - target: {fileID: 6792374516280071927, guid: d4180ab029696f1449669bfa3ff59aef, type: 3}
       propertyPath: m_Name

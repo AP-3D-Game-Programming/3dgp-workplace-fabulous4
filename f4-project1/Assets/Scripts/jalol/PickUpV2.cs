@@ -9,17 +9,13 @@ public class PickUpV2 : MonoBehaviour
 {
     private int scoreCounter = 0;
     public TextMeshProUGUI scoreText;
-    public GameObject obstaclePrefab; // Assign this in the Inspector
-
-   
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
     }
     // Update is called once per frame
-    private bool hold = false;
+    public bool hold = false;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -58,7 +54,6 @@ public class PickUpV2 : MonoBehaviour
                                 npcInteract.Interact();
                                 Destroy(collider.gameObject);
                                 scoreText.text = $"Score: {++scoreCounter}";
-
                             }
                             else
                             {
