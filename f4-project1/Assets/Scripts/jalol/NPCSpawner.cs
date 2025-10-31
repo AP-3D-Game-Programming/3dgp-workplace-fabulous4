@@ -9,11 +9,11 @@ public class NPCSpawner : MonoBehaviour
 
     private float spawnTimer = 0f;
     private int currentNPCCount = 0;
+    public GameObject waypoint;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -35,6 +35,8 @@ public class NPCSpawner : MonoBehaviour
         if (npcPrefab == null || spawnPoint == null) return;
 
         GameObject npc = Instantiate(npcPrefab, spawnPoint.position, spawnPoint.rotation);
+        NpcMovement npcControls = npc.GetComponent<NpcMovement>();
+        npcControls.waypoint = waypoint;
         npc.tag = "NPC";
         currentNPCCount++;
 
