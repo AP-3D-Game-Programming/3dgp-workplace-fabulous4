@@ -9,8 +9,10 @@ public class ovenScript : MonoBehaviour
     List<string> currentOvenIngredients = new List<string>();
     List<string> allIngredients = new List<string>() { "butter", "milk", "water", "sugar", "egg", "flour" };
 
+
     private void OnTriggerStay(Collider other) //checkt of er een ingredient in de sphere collider van de mixer zit, E klik voegt dit dan toe aan de huidige items in de mixer. 
     {
+
         string objectInSphereColliderName = other.name;
         bool ingredientFound = false;
         foreach (string ingredient in allIngredients)
@@ -20,7 +22,7 @@ public class ovenScript : MonoBehaviour
                 ingredientFound = true;
             }
         }
-        if (ingredientFound && Input.GetKeyDown(KeyCode.E))
+        if (ingredientFound && Input.GetKeyDown(KeyCode.T))
         {
             Debug.Log($"{objectInSphereColliderName} transferred to mixer");
             int indexOfSpace = other.name.IndexOf("(");
@@ -29,8 +31,8 @@ public class ovenScript : MonoBehaviour
             currentOvenIngredients.Add(correctIngredientName);
             Debug.Log($"Ingredient added name: {correctIngredientName}");
             Destroy(other.gameObject);
-            checkRecipesRequiredForProduct();
         }
+        checkRecipesRequiredForProduct();
     }
     private void checkRecipesRequiredForProduct()
     {
@@ -39,17 +41,13 @@ public class ovenScript : MonoBehaviour
         foreach (ProductIngredientMapping productAndRecipe in allProducts)
         {
             Debug.Log($"Check recept: {productAndRecipe.ProductName}. Oven heeft {currentOvenIngredients.Count} items. Recept vereist {productAndRecipe.Ingredients.Count} items.");
-
             if (CheckIfListsMatch(currentOvenIngredients, productAndRecipe.Ingredients) )
             {
-                Vector3 localOffset = new Vector3(-0.3f, 0.5f, 0f);
-            
-            // 2. BEREKEN de uiteindelijke WERELDPOSITIE:
-            //    Neem de wereldpositie van de parent en tel de offset hierbij op.
+                Vector3 localOffset = new Vector3(-0.5f, 1f, 1f);
                 Vector3 worldSpawnPosition = parentForProductSpawn.transform.position + localOffset;
-
-            // 3. Spawnen met de berekende WERELDPOSITIE
-                GameObject newProduct = Instantiate(
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    GameObject newProduct = Instantiate(
                     productAndRecipe.ProductPrefab,
                     worldSpawnPosition, // Gebruik de berekende wereldpositie
                     Quaternion.identity,
@@ -57,6 +55,8 @@ public class ovenScript : MonoBehaviour
                 );
                 currentOvenIngredients.Clear(); // leeg maken van de currentIngredients in oven List
                 return;
+                }
+
             }
         }
     }
