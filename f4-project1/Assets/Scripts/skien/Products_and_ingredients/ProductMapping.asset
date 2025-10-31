@@ -19,21 +19,20 @@ MonoBehaviour:
     - water
     - flour
   - ProductName: cake
-    ProductPrefab: {fileID: 919132149155446097, guid: e2d57827f2ae348408e50740d13d4f79, type: 3}
+    ProductPrefab: {fileID: 2592868150269417280, guid: 2901b4de401dae34b85966411adca12f, type: 3}
     Ingredients:
     - milk
     - flour
     - sugar
     - egg
-    - egg
   - ProductName: croissant
-    ProductPrefab: {fileID: 919132149155446097, guid: 5074a518c48c37f42b72bb32b24cf1f5, type: 3}
+    ProductPrefab: {fileID: 3661418495908643247, guid: d27484eb4f91de9478e706f4fa1300ba, type: 3}
     Ingredients:
     - milk
     - flour
     - butter
   - ProductName: coffee_cake
-    ProductPrefab: {fileID: 919132149155446097, guid: bb187cfa354bf384f8863aabbf7ad73a, type: 3}
+    ProductPrefab: {fileID: 3301010265192467639, guid: d16a1d26aa8030445ba063fe5b8b6ccd, type: 3}
     Ingredients:
     - water
     - sugar

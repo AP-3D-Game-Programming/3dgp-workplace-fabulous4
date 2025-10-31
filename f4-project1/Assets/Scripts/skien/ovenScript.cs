@@ -38,41 +38,42 @@ public class ovenScript : MonoBehaviour
     {
         Debug.Log("checkRecipesRequiredForProduct reached");
         List<ProductIngredientMapping> allProducts = productData.Mappings;
-        foreach (ProductIngredientMapping productAndRecipe in allProducts)
+        foreach (ProductIngredientMapping product in allProducts)
         {
-            Debug.Log($"Check recept: {productAndRecipe.ProductName}. Oven heeft {currentOvenIngredients.Count} items. Recept vereist {productAndRecipe.Ingredients.Count} items.");
-            if (CheckIfListsMatch(currentOvenIngredients, productAndRecipe.Ingredients) )
+
+            if (product.Ingredients.All(needed => currentOvenIngredients.Contains(needed)))
             {
+                Debug.Log("Ingredients match found for product: " + product.ProductName);
                 Vector3 localOffset = new Vector3(-0.5f, 1f, 1f);
                 Vector3 worldSpawnPosition = parentForProductSpawn.transform.position + localOffset;
-                if (Input.GetKeyDown(KeyCode.E))
-                {
                     GameObject newProduct = Instantiate(
-                    productAndRecipe.ProductPrefab,
+                    product.ProductPrefab,
                     worldSpawnPosition, // Gebruik de berekende wereldpositie
                     Quaternion.identity,
                     parentForProductSpawn.transform // De parent is optioneel, maar kan behouden blijven als je dat wilt.
                 );
-                currentOvenIngredients.Clear(); // leeg maken van de currentIngredients in oven List
-                return;
+                    currentOvenIngredients.Clear(); // leeg maken van de currentIngredients in oven List
+                    return;
                 }
 
             }
         }
     }
 
-    private bool CheckIfListsMatch(List<string> currentIngredients, List<string> neededIngredients)
+    /*private bool CheckIfListsMatch(List<string> currentIngredients, List<string> neededIngredients)
     {
-    if (currentIngredients == null || neededIngredients == null)
-    {
-        return false;
-    }
+        if (currentIngredients == null || neededIngredients == null)
+        {
+            return false;
+        }
 
-    var sortedCurrent = currentIngredients.Select(n => n.ToLower()).OrderBy(n => n);
-    var sortedNeeded = neededIngredients.Select(n => n.ToLower()).OrderBy(n => n);
+        var sortedCurrent = currentIngredients.Select(n => n.ToLower()).OrderBy(n => n);
+        var sortedNeeded = neededIngredients.Select(n => n.ToLower()).OrderBy(n => n);
 
-    return sortedCurrent.SequenceEqual(sortedNeeded);
-
-    }
+        return sortedCurrent.SequenceEqual(sortedNeeded);
     
-}
+        return neededIngredients.All(needed => currentIngredients.Contains(needed));
+        
+    }
+    */
+    
