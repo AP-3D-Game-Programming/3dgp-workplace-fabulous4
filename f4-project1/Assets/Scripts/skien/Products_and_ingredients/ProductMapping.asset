@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProductDataSO
   Mappings:
   - ProductName: loaf
-    ProductPrefab: {fileID: 919132149155446097, guid: f0a1b869ebb395d4497d72a9a6cc7496, type: 3}
+    ProductPrefab: {fileID: 6321798221122012130, guid: a5812e90c4e9b02498ef2a17e56b63a0, type: 3}
     Ingredients:
     - water
     - flour
