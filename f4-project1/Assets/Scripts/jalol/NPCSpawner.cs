@@ -10,6 +10,7 @@ public class NPCSpawner : MonoBehaviour
     private float spawnTimer = 0f;
     private int currentNPCCount = 0;
     public GameObject waypoint;
+    public GameObject player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,18 +26,22 @@ public class NPCSpawner : MonoBehaviour
 
         if (spawnTimer >= spawnInterval)
         {
-            SpawnNPC();
             spawnTimer = 0f;
+            SpawnNPC();
         }
     }
 
     void SpawnNPC()
     {
+        // VOEG DEZE REGEL TOE
+        Debug.Log($"SpawnNPC() is aangeroepen door '{this.gameObject.name}' op tijdstip {Time.time}", this.gameObject);
+
         if (npcPrefab == null || spawnPoint == null) return;
 
         GameObject npc = Instantiate(npcPrefab, spawnPoint.position, spawnPoint.rotation);
         NpcMovement npcControls = npc.GetComponent<NpcMovement>();
         npcControls.waypoint = waypoint;
+        npcControls.player = player;
         npc.tag = "NPC";
         currentNPCCount++;
 
@@ -53,6 +58,8 @@ public class NPCSpawner : MonoBehaviour
         if (movement != null)
         {
             movement.spawnPoint = spawnPoint;
+            movement.waypoint = waypoint;
+            movement.player = player;
         }
 
         NPCInteractable interactable = npc.GetComponent<NPCInteractable>();
@@ -65,6 +72,7 @@ public class NPCSpawner : MonoBehaviour
     void OnNPCDespawned()
     {
         currentNPCCount--;
-        
-    }
+    }        
+
+
 }
