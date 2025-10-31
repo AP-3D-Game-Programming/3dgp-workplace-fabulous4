@@ -16,13 +16,14 @@ public class PickUpV2 : MonoBehaviour
     }
     // Update is called once per frame
     public bool hold = false;
+    public Collider[] colliderArray;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Interacted with E");
             float interactRange = 5f;
-            Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
+            colliderArray = Physics.OverlapSphere(transform.position, interactRange);
             foreach (Collider collider in colliderArray)
             {
                 if (collider.gameObject != gameObject) // skip jezelf
@@ -62,7 +63,6 @@ public class PickUpV2 : MonoBehaviour
                             {
                                 Rigidbody newRb = collider.gameObject.AddComponent<Rigidbody>();
                                 collider.transform.SetParent(null);
-                                newRb.isKinematic = false;
                                 newRb.useGravity = true;
                             }
                             hold = !hold;
