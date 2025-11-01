@@ -9,6 +9,7 @@ public class NPCSpawner : MonoBehaviour
 
     private float spawnTimer = 0f;
     private int currentNPCCount = 0;
+    private int nextCustomerId = 1;
     public GameObject waypoint;
     public GameObject player;
 
@@ -49,8 +50,9 @@ public class NPCSpawner : MonoBehaviour
         NPCOrder npcOrder = npc.GetComponent<NPCOrder>();
         if (npcOrder != null)
         {
-            npcOrder.npcName = "Klant " + currentNPCCount;
+            npcOrder.npcName = "Klant " + nextCustomerId;
             npcOrder.CreateOrderOnSpawn();
+            nextCustomerId++;
         }
         
 
@@ -62,10 +64,25 @@ public class NPCSpawner : MonoBehaviour
             movement.player = player;
         }
 
+        // NPCInteractable interactable = npc.GetComponent<NPCInteractable>();
+        // if (interactable != null)
+        // {
+        //     npc.GetComponent<NPCInteractable>().onDespawn += OnNPCDespawned;
+        // }
+
         NPCInteractable interactable = npc.GetComponent<NPCInteractable>();
         if (interactable != null)
         {
-            npc.GetComponent<NPCInteractable>().onDespawn += OnNPCDespawned;
+            interactable.onDespawn += () =>
+            {
+                //remove the order for this npc if it exists
+                var npcOrderComp = npc.GetComponent<NPCOrder>();
+                if (npcOrderComp != null)
+                    npcOrderComp.DeleteOrderOnDespawn();
+
+                //decrement count
+                currentNPCCount--;
+            };
         }
     }
 

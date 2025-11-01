@@ -20,16 +20,26 @@ public class OrderManager : MonoBehaviour
         Instance = this;
     }
 
-    public void CreateNewOrder(string klantNaam)
+    public Order CreateNewOrder(string klantNaam)
     {
         // Kies random bestelling
         string bestelling = possibleOrders[Random.Range(0, possibleOrders.Count)];
         var newText = Instantiate(orderTemplate, orderListParent);
         newText.text = klantNaam + ": " + bestelling;
         newText.gameObject.SetActive(true);
+
+        var order = new Order(klantNaam, bestelling);
+        order.uiElement = newText;
+        currentOrders.Add(order);
+        return order;
     }
     public void RemoveOrder(Order order)
     {
+        if (order == null) return;
+
+        if (currentOrders.Contains(order))
+            currentOrders.Remove(order);
+
         if (order.uiElement != null)
             Destroy(order.uiElement.gameObject);
     }

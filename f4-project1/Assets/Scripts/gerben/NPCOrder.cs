@@ -8,13 +8,19 @@ public class NPCOrder : MonoBehaviour
 
     public void CreateOrderOnSpawn()
     {
-        OrderManager.Instance.CreateNewOrder(npcName);
+        if (OrderManager.Instance != null)
+        myOrder = OrderManager.Instance.CreateNewOrder(npcName);
     }
     public void DeleteOrderOnDespawn()
     {
-        if (myOrder != null)
+        if (myOrder != null && OrderManager.Instance != null)
+        {
             OrderManager.Instance.RemoveOrder(myOrder);
+            myOrder = null;
+        }
+            
     }
 }
+
 
 
