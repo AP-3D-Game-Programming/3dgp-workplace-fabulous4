@@ -24,14 +24,33 @@ public class OrderManager : MonoBehaviour
     {
         // Kies random bestelling
         string bestelling = possibleOrders[Random.Range(0, possibleOrders.Count)];
+        // Map display-naam naar interne itemId (gebruik voor inventory checks)
+        string itemId = MapDisplayToItemId(bestelling);
         var newText = Instantiate(orderTemplate, orderListParent);
         newText.text = klantNaam + ": " + bestelling;
         newText.gameObject.SetActive(true);
 
         var order = new Order(klantNaam, bestelling);
         order.uiElement = newText;
+        order.itemId = itemId;
         currentOrders.Add(order);
         return order;
+    }
+    
+    string MapDisplayToItemId(string displayName)
+    {
+        // eenvoudige mapping; pas aan als je andere namen gebruikt
+        switch (displayName)
+        {
+            case "Brood":
+                return "loaf";
+            case "Croissant":
+                return "croissant_prefab";
+            case "Taartje":
+                return "cake-birthday";
+            default:
+                return displayName.ToLower();
+        }
     }
     public void RemoveOrder(Order order)
     {
@@ -75,6 +94,7 @@ public class Order
 {
     public string npcName;
     public string itemName;
+    public string itemId;
     public TextMeshProUGUI uiElement;
 
     public Order(string npcName, string itemName)
