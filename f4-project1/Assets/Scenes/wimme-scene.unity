@@ -438,6 +438,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: room(jalol)
       objectReference: {fileID: 0}
+    - target: {fileID: 4617984408003471463, guid: fe963fbab31d20442804337e0924768d, type: 3}
+      propertyPath: m_Size.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4617984408003471463, guid: fe963fbab31d20442804337e0924768d, type: 3}
+      propertyPath: m_Center.x
+      value: 7.947292e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4617984408003471463, guid: fe963fbab31d20442804337e0924768d, type: 3}
+      propertyPath: m_Center.z
+      value: -0.5000004
+      objectReference: {fileID: 0}
     - target: {fileID: 5314953801074187633, guid: fe963fbab31d20442804337e0924768d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 707.6552

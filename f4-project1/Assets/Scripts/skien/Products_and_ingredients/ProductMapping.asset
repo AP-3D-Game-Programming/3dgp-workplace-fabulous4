@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c2ea18fda5347a4cb05fe9ab0cb7647, type: 3}
+  m_Name: ProductMapping
+  m_EditorClassIdentifier: Assembly-CSharp::ProductDataSO
+  Mappings:
+  - ProductName: loaf
+    ProductPrefab: {fileID: 6321798221122012130, guid: a5812e90c4e9b02498ef2a17e56b63a0, type: 3}
+    Ingredients:
+    - water
+    - flour
+  - ProductName: cake
+    ProductPrefab: {fileID: 2592868150269417280, guid: 2901b4de401dae34b85966411adca12f, type: 3}
+    Ingredients:
+    - milk
+    - flour
+    - sugar
+    - egg
+  - ProductName: croissant
+    ProductPrefab: {fileID: 3661418495908643247, guid: d27484eb4f91de9478e706f4fa1300ba, type: 3}
+    Ingredients:
+    - milk
+    - flour
+    - butter
+  - ProductName: coffee_cake
+    ProductPrefab: {fileID: 3301010265192467639, guid: d16a1d26aa8030445ba063fe5b8b6ccd, type: 3}
+    Ingredients:
+    - water
+    - sugar
+    - butter

@@ -8,13 +8,29 @@ public class NPCOrder : MonoBehaviour
 
     public void CreateOrderOnSpawn()
     {
-        OrderManager.Instance.CreateNewOrder(npcName);
+        if (OrderManager.Instance != null)
+        {
+            myOrder = OrderManager.Instance.CreateNewOrder(npcName);
+
+            // Stel requiredItem op NPCInteractable in op de interne itemId zodat
+            // NPCInteractable.Interact() weet welk item geaccepteerd wordt
+            var interactable = GetComponent<NPCInteractable>();
+            if (interactable != null && myOrder != null)
+            {
+                interactable.requiredItem = myOrder.itemId;
+            }
+        }
     }
     public void DeleteOrderOnDespawn()
     {
-        if (myOrder != null)
+        if (myOrder != null && OrderManager.Instance != null)
+        {
             OrderManager.Instance.RemoveOrder(myOrder);
+            myOrder = null;
+        }
+            
     }
 }
+
 
 
