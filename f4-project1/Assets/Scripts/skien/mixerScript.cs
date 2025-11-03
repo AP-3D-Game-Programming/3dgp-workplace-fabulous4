@@ -44,7 +44,7 @@ public class ovenScript : MonoBehaviour
             if (product.Ingredients.All(needed => currentOvenIngredients.Contains(needed)))
             {
                 Debug.Log("Ingredients match found for product: " + product.ProductName);
-                Vector3 localOffset = new Vector3(-0.5f, 1f, 1f);
+                Vector3 localOffset = new Vector3(0f, 0f, -0.7f);
                 Vector3 worldSpawnPosition = parentForProductSpawn.transform.position + localOffset;
                     GameObject newProduct = Instantiate(
                     product.ProductPrefab,
