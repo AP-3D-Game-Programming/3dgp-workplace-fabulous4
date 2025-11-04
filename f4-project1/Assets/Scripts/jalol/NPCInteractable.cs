@@ -20,6 +20,7 @@ public class NPCInteractable : MonoBehaviour
 
         if (inv.HasItem(requiredItem))
         {
+            Debug.Log("Required item received, trying to despawn player.");
             inv.RemoveItem(requiredItem);
             StartCoroutine(FadeOutAndDespawn());
         }
@@ -27,6 +28,7 @@ public class NPCInteractable : MonoBehaviour
 
     IEnumerator FadeOutAndDespawn()
     {
+        Debug.Log("Despawning player.");
         // verzamel renderers
         var rends = GetComponentsInChildren<Renderer>();
         // maak kopieën van materialen zodat we geen shared materials kapotmaken
@@ -84,7 +86,9 @@ public class NPCInteractable : MonoBehaviour
         // korte extra wacht-tijd indien gewenst
         yield return new WaitForSeconds(despawnDelay);
 
+        Debug.Log("Invoking on despawn.");
         onDespawn?.Invoke();
+        Debug.Log("Destroying player");
         Destroy(gameObject);
     }
 }
