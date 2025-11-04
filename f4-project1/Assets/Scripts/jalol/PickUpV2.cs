@@ -14,6 +14,10 @@ public class PickUpV2 : MonoBehaviour
     // Maak de array public om hem in de Inspector te zien
     public Collider[] colliderArray;
 
+    [Header("Throw Settings")]
+    public float throwForce = 6f;
+    public float throwUpwardForce = 2f;
+
     private int scoreCounter = 0;
     private GameObject heldObject = null; // Houdt bij welk object we vasthouden
 
@@ -45,6 +49,12 @@ public class PickUpV2 : MonoBehaviour
             {
                 TryDropOrGive();
             }
+        }
+
+        // Throw logic: als je iets vast hebt en op F drukt, gooi het weg
+        if (Input.GetKeyDown(KeyCode.F) && heldObject != null)
+        {
+            ThrowHeldObject();
         }
     }
 
@@ -138,6 +148,42 @@ public class PickUpV2 : MonoBehaviour
         }
 
         // We houden nu niks meer vast
+        heldObject = null;
+    }
+
+    void ThrowHeldObject()
+    {
+        if (heldObject == null) return;
+
+        // Maak los en zet collider aan
+        heldObject.transform.SetParent(null);
+        Collider heldObjectCollider = heldObject.GetComponent<Collider>();
+        if (heldObjectCollider != null)
+        {
+            heldObjectCollider.enabled = true;
+        }
+
+        // Rigidbody toevoegen of hergebruiken
+        Rigidbody rb = heldObject.GetComponent<Rigidbody>();
+        if (rb == null)
+        {
+            rb = heldObject.AddComponent<Rigidbody>();
+        }
+
+        rb.isKinematic = false;
+        rb.useGravity = true;
+
+        // Kleine offset zodat het niet in de speler/hand blijft steken
+        heldObject.transform.position = holdParent != null
+            ? holdParent.position + transform.forward * 0.5f
+            : transform.position + transform.forward * 0.5f;
+
+        // Pas de kracht aan naar smaak (impulse)
+        Vector3 throwVector = transform.forward * throwForce + Vector3.up * throwUpwardForce;
+        rb.AddForce(throwVector, ForceMode.Impulse);
+
+        Debug.Log($"Gegooid: {heldObject.name} met kracht {throwVector}");
+
         heldObject = null;
     }
 }
