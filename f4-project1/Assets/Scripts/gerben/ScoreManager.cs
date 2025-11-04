@@ -26,7 +26,10 @@ public class ScoreManager : MonoBehaviour
 
     void UpdateScoreText()
     {
-        scoreText.text = "Score: " + score;
+        if (scoreText != null)
+            scoreText.text = "Score: " + score;
+        else
+            Debug.LogWarning("ScoreManager: scoreText is not assigned!");
     }
 }
 
