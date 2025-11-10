@@ -70,12 +70,6 @@ public class PickUpScript : MonoBehaviour
         {
             objCollider.enabled = false;
         }
-        
-        ObjectInteractable interactable = heldObj.GetComponent<ObjectInteractable>();
-        if (interactable != null)
-        {
-            Destroy(interactable);
-        }
     }
 
     public void RemoveItemFromHand(string itemId)

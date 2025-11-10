@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9352cb7f0798e5347aea8947cc390822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCInteractable
-  requiredItem: loaf
+  requiredItem: 
   fadeDuration: 0.6
   despawnDelay: 0.1
 --- !u!114 &3353432351162275555

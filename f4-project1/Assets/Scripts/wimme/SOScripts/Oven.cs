@@ -143,7 +143,7 @@ public class Oven : MonoBehaviour
             inv.AddItem(_pendingOutputItemId);
 
         if (hand != null)
-            hand.SpawnItemInHand(_pendingOutputItemId); // laat resultaat meteen “in de hand” zien (visueel). :contentReference[oaicite:6]{index=6}
+            hand.SpawnItemInHand(_pendingOutputItemId); // laat resultaat meteen ï¿½in de handï¿½ zien (visueel). :contentReference[oaicite:6]{index=6}
 
         Debug.Log($"Speler kreeg '{_pendingOutputItemId}' x{_pendingOutputCount}");
 

@@ -43,11 +43,11 @@ public class OrderManager : MonoBehaviour
         switch (displayName)
         {
             case "Brood":
-                return "loaf_prefab(Clone)";
+                return "loaf";
             case "Croissant":
-                return "croissant_prefab(Clone) ";
+                return "croissant";
             case "Taartje":
-                return "cake_prefab(Clone)";
+                return "cake";
             default:
                 return displayName.ToLower();
         }
@@ -63,30 +63,10 @@ public class OrderManager : MonoBehaviour
             Destroy(order.uiElement.gameObject);
     }
 
-    public void CompleteOrder(Order order)
-    {
-        if (currentOrders.Contains(order))
-        {
-            currentOrders.Remove(order);
-
-            // UI verwijderen
-            if (order.uiElement != null)
-                Destroy(order.uiElement.gameObject);
-
-            // Score verhogen
-            ScoreManager.Instance.AddScore(10);
-        }
-    }
-
     public Order GetOrderForNPC(string npcName)
     {
         return currentOrders.Find(o => o.npcName == npcName);
     }
-    // void Start()
-    // {
-    //     CreateNewOrder("TestKlant");
-    // }
-
 }
 
 [System.Serializable]

@@ -7,6 +7,8 @@ public class PlayerInventory : MonoBehaviour
 
     public bool HasItem(string itemId)
     {
+        Debug.Log($"HasItem: {items != null && items.Contains(itemId)}");
+        Debug.Log($"Items: {string.Join(", ", items)}, itemID: {itemId}");
         return items != null && items.Contains(itemId);
     }
 
@@ -14,6 +16,7 @@ public class PlayerInventory : MonoBehaviour
     {
         Debug.Log("Test");
         if (items == null) items = new List<string>();
+        Debug.Log($"Items: {string.Join(", ", items)}");
         Debug.Log($"[DEBUG] {itemId} added to inventory");
         items.Add(itemId);
 
@@ -22,16 +25,6 @@ public class PlayerInventory : MonoBehaviour
     public void RemoveItem(string itemId)
     {
         if (items == null) return;
-        if (items.Remove(itemId))
-        {
-            var pickup = GetComponent<PickUpScript>();
-            if (pickup != null)
-            {
-                pickup.RemoveItemFromHand(itemId);
-            }
-        }
+        items.Remove(itemId);
     }
-
-    [ContextMenu("AddTestItem")]
-    void AddTestItemContext() => AddItem("loaf");
 }

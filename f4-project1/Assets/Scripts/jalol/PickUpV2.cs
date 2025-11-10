@@ -101,6 +101,7 @@ public class PickUpV2 : MonoBehaviour
             if (inv != null) inv.AddItem(heldObject.name);
 
             Debug.Log($"Opgepakt: {heldObject.name}");
+            Debug.Log($"Inventory: {string.Join(", ", inv.items)}");
         }
     }
 
@@ -111,6 +112,7 @@ public class PickUpV2 : MonoBehaviour
         
         // Gebruik FirstOrDefault om een NPC te vinden
         Collider npcCollider = colliderArray.FirstOrDefault(c => c.CompareTag("NPC"));
+        PlayerInventory inv = GetComponent<PlayerInventory>();
 
         // Als er een NPC is, geef het item
         if (npcCollider != null)
@@ -120,9 +122,11 @@ public class PickUpV2 : MonoBehaviour
             {
                 npcInteract.Interact();
                 Destroy(heldObject); // Vernietig het object dat we vasthielden
-                
+
                 if (scoreText != null) scoreText.text = $"Score: {++scoreCounter}";
-                Debug.Log($"Item gegeven aan {npcCollider.name}");
+                if (inv != null)
+                inv.RemoveItem(heldObject.name);
+                Debug.Log($"Item: {heldObject.name} gegeven aan {npcCollider.name}");
             }
         }
         // Als er geen NPC is, laat het item vallen
@@ -143,6 +147,9 @@ public class PickUpV2 : MonoBehaviour
                 rb = heldObject.AddComponent<Rigidbody>();
             }
             rb.isKinematic = false; // Zet physics weer aan
+
+            if (inv != null)
+            inv.RemoveItem(heldObject.name);
             
             Debug.Log($"Laten vallen: {heldObject.name}");
         }

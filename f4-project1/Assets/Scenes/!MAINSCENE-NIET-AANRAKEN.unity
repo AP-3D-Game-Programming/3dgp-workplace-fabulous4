@@ -199,6 +199,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sugar_spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 7870839121687204396, guid: 0310b2d752f913641b74a56b5f71ba6f, type: 3}
+      propertyPath: items.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8110654583002489464, guid: 0310b2d752f913641b74a56b5f71ba6f, type: 3}
       propertyPath: m_LocalScale.z
       value: 2
