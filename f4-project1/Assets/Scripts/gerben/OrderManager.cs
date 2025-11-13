@@ -43,11 +43,11 @@ public class OrderManager : MonoBehaviour
         switch (displayName)
         {
             case "Brood":
-                return "loaf";
+                return "loaf_prefab(Clone)";
             case "Croissant":
-                return "croissant";
+                return "croissant_prefab(Clone)";
             case "Taartje":
-                return "cake";
+                return "cake_prefab(Clone)";
             default:
                 return displayName.ToLower();
         }
