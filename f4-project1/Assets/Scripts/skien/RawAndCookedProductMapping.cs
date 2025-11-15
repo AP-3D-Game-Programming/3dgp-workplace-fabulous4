@@ -6,5 +6,6 @@ using UnityEngine;
         public string RawProductName;
         public GameObject RawProductPrefab;
         public GameObject CookedProductPrefab;
+        public int BakeTime;
     }
     

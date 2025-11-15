@@ -16,12 +16,16 @@ MonoBehaviour:
   - RawProductName: raw_loaf
     RawProductPrefab: {fileID: 6321798221122012130, guid: 14c7f546456350e4ab76a67a69195813, type: 3}
     CookedProductPrefab: {fileID: 6321798221122012130, guid: a5812e90c4e9b02498ef2a17e56b63a0, type: 3}
+    BakeTime: 5
   - RawProductName: raw_croissant
     RawProductPrefab: {fileID: 3661418495908643247, guid: a8eb369e3b76d9948b20b74e75747c57, type: 3}
     CookedProductPrefab: {fileID: 3661418495908643247, guid: d27484eb4f91de9478e706f4fa1300ba, type: 3}
+    BakeTime: 5
   - RawProductName: raw_cake
     RawProductPrefab: {fileID: 2592868150269417280, guid: 2901b4de401dae34b85966411adca12f, type: 3}
     CookedProductPrefab: {fileID: 2592868150269417280, guid: 2901b4de401dae34b85966411adca12f, type: 3}
+    BakeTime: 5
   - RawProductName: raw_coffee_cake
     RawProductPrefab: {fileID: 3767772292646697503, guid: 80e1be4ca84310c4eb1e80d713ec42ca, type: 3}
     CookedProductPrefab: {fileID: 2918568906483756273, guid: 4a862532425eefb45b90e8846f744468, type: 3}
+    BakeTime: 5
