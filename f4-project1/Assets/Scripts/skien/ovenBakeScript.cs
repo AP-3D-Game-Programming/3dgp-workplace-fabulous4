@@ -1,9 +1,10 @@
-/*using UnityEngine;
+using UnityEngine;
 
 public class ovenBakeScript : MonoBehaviour
 {
     public GameObject parentForProductSpawn;
     public RawCookedProductDataSO rawCookedProductData; //product mapping in de unity editor waar producten en ingredienten kunnen toegevoegd worden.
+
 
     private void OnTriggerStay(Collider other) //checkt of er een ingredient in de sphere collider van de oven zit, E klik voegt dit dan toe aan de huidige items in de mixer. 
     {
@@ -28,4 +29,4 @@ public class ovenBakeScript : MonoBehaviour
         }
     }
 }
-*/
+

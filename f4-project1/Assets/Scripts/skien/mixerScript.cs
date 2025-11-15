@@ -10,7 +10,7 @@ public class ovenScript : MonoBehaviour
     List<string> allIngredients = new List<string>() { "butter", "milk", "water", "sugar", "egg", "flour" };
 
 
-    private void OnTriggerStay(Collider other) //checkt of er een ingredient in de sphere collider van de mixer zit, E klik voegt dit dan toe aan de huidige items in de mixer. 
+    private void OnTriggerStay(Collider other) //checkt of er een ingredient in de sphere collider van de mixer zit, T klik voegt dit dan toe aan de huidige items in de mixer. 
     {
 
         string objectInSphereColliderName = other.name;
@@ -44,7 +44,7 @@ public class ovenScript : MonoBehaviour
             if (product.Ingredients.All(needed => currentOvenIngredients.Contains(needed)))
             {
                 Debug.Log("Ingredients match found for product: " + product.ProductName);
-                Vector3 localOffset = new Vector3(0f, 0f, -0.7f);
+                Vector3 localOffset = new Vector3(-0.5f, 1f, 0.5f);
                 Vector3 worldSpawnPosition = parentForProductSpawn.transform.position + localOffset;
                     GameObject newProduct = Instantiate(
                     product.ProductPrefab,

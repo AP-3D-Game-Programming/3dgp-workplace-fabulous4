@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa3bab012909694094a809e384309f2, type: 3}
+  m_Name: Raw_cookedMapping
+  m_EditorClassIdentifier: Assembly-CSharp::RawCookedProductDataSO
+  Mappings:
+  - RawProductName: raw_loaf
+    RawProductPrefab: {fileID: 6321798221122012130, guid: 14c7f546456350e4ab76a67a69195813, type: 3}
+    CookedProductPrefab: {fileID: 6321798221122012130, guid: a5812e90c4e9b02498ef2a17e56b63a0, type: 3}
+  - RawProductName: raw_croissant
+    RawProductPrefab: {fileID: 3661418495908643247, guid: a8eb369e3b76d9948b20b74e75747c57, type: 3}
+    CookedProductPrefab: {fileID: 3661418495908643247, guid: d27484eb4f91de9478e706f4fa1300ba, type: 3}
+  - RawProductName: raw_cake
+    RawProductPrefab: {fileID: 2592868150269417280, guid: 2901b4de401dae34b85966411adca12f, type: 3}
+    CookedProductPrefab: {fileID: 2592868150269417280, guid: 2901b4de401dae34b85966411adca12f, type: 3}
+  - RawProductName: raw_coffee_cake
+    RawProductPrefab: {fileID: 3767772292646697503, guid: 80e1be4ca84310c4eb1e80d713ec42ca, type: 3}
+    CookedProductPrefab: {fileID: 2918568906483756273, guid: 4a862532425eefb45b90e8846f744468, type: 3}

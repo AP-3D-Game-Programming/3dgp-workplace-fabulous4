@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProductDataSO
   Mappings:
   - ProductName: loaf
-    ProductPrefab: {fileID: 6321798221122012130, guid: a5812e90c4e9b02498ef2a17e56b63a0, type: 3}
+    ProductPrefab: {fileID: 6321798221122012130, guid: 14c7f546456350e4ab76a67a69195813, type: 3}
     Ingredients:
     - water
     - flour
@@ -26,13 +26,13 @@ MonoBehaviour:
     - sugar
     - egg
   - ProductName: croissant
-    ProductPrefab: {fileID: 3661418495908643247, guid: d27484eb4f91de9478e706f4fa1300ba, type: 3}
+    ProductPrefab: {fileID: 3661418495908643247, guid: a8eb369e3b76d9948b20b74e75747c57, type: 3}
     Ingredients:
     - milk
     - flour
     - butter
   - ProductName: coffee_cake
-    ProductPrefab: {fileID: 3301010265192467639, guid: d16a1d26aa8030445ba063fe5b8b6ccd, type: 3}
+    ProductPrefab: {fileID: 3767772292646697503, guid: 80e1be4ca84310c4eb1e80d713ec42ca, type: 3}
     Ingredients:
     - water
     - sugar

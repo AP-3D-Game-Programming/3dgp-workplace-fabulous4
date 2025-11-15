@@ -100,7 +100,6 @@ GameObject:
   - component: {fileID: 4843490162460003454}
   - component: {fileID: 8123437105603356609}
   - component: {fileID: 412891474215627438}
-  - component: {fileID: 2503315251952823628}
   m_Layer: 0
   m_Name: cake_prefab
   m_TagString: canPickUp
@@ -177,19 +176,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.64151096, y: 0.2423962, z: 0.64972097}
   m_Center: {x: -0.0025061362, y: 0.12560561, z: -0.027288426}
---- !u!114 &2503315251952823628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2592868150269417280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ae10e72d53a968438eae2d92cf66315, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObjectInteractable
-  itemId: cake
 --- !u!1 &2623164915833971965
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,4 @@
-/*using UnityEngine;
+using UnityEngine;
 
 [System.Serializable]
     public class RawCookedProductMapping
@@ -7,4 +7,4 @@
         public GameObject RawProductPrefab;
         public GameObject CookedProductPrefab;
     }
-    */
+    
