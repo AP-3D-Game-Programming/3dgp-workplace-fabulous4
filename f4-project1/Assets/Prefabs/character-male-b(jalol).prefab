@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: fca0a02519b6e4244987c681ede8528a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fca0a02519b6e4244987c681ede8528a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fca0a02519b6e4244987c681ede8528a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fca0a02519b6e4244987c681ede8528a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -100,7 +100,7 @@ PrefabInstance:
       addedObject: {fileID: 4006499216429541399}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fca0a02519b6e4244987c681ede8528a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3536390177750557992}
+      addedObject: {fileID: 5436531920385958973}
   m_SourcePrefab: {fileID: 100100000, guid: fca0a02519b6e4244987c681ede8528a, type: 3}
 --- !u!1 &1230331282883876707 stripped
 GameObject:
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f70cb8f8598c745921d6bcaf5fdb31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  interactRange: 5
+  interactRange: 2
 --- !u!114 &4006499216429541399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   items: []
---- !u!114 &3536390177750557992
+--- !u!114 &5436531920385958973
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,16 +230,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1230331282883876707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa209107e2fcaea42a33a59f2e9894ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 38072d612fec66b4f8472dbd687b23c0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickUpScript
-  holdPos: {fileID: 7401210191258700523}
-  holdOffset: {x: 0.3, y: 0, z: 0.2}
-  itemPrefabs:
-  - itemId: loaf
-    prefab: {fileID: 4155592418079697357, guid: 3ad072e81853caa44a257d277e691b7a, type: 3}
---- !u!4 &7401210191258700523 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8891244130364874969, guid: fca0a02519b6e4244987c681ede8528a, type: 3}
-  m_PrefabInstance: {fileID: 2148896629499177522}
-  m_PrefabAsset: {fileID: 0}
+  m_EditorClassIdentifier: '::'
+  interactRange: 3
+  scoreText: {fileID: 0}
+  holdParent: {fileID: 0}
+  holdOffset: {x: 0.3, y: 0, z: 0}
+  colliderArray: []
+  throwForce: 6
+  throwUpwardForce: 2
