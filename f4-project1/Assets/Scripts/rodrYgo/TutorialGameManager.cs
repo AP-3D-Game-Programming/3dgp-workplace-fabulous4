@@ -76,23 +76,23 @@ public class TutorialGameManager : MonoBehaviour
 
     public void StartIngredientStep()
     {
-        DestroyWall("ingedientWall");
+        DestroyWall("ingredientWall");
         EventSystem.Instance.TriggerIngredientSpeech();
-        MoveCamera(7f);
+        MoveCamera(10f);
     }
 
     public void StartHardwareStep()
     {
         DestroyWall("hardwareWall");
         EventSystem.Instance.TriggerHardwareSpeech();
-        MoveCamera(7f);
+        MoveCamera(10f);
     }    
 
     public void StartOrderStep()
     {
         DestroyWall("orderWall");
         EventSystem.Instance.TriggerOrderSpeech();
-        MoveCamera(12.5f, 5f);
+        MoveCamera(15f, 5f);
     }    
 
     public void StartOutroStep()

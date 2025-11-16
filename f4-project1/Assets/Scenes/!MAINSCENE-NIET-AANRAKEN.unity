@@ -171,6 +171,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: milk_spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 4682605418393401314, guid: 0310b2d752f913641b74a56b5f71ba6f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682605418393401314, guid: 0310b2d752f913641b74a56b5f71ba6f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682605418393401314, guid: 0310b2d752f913641b74a56b5f71ba6f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5031620852474753832, guid: 0310b2d752f913641b74a56b5f71ba6f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

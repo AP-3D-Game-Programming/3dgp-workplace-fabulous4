@@ -599,6 +599,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &996445125 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7401210191258700523, guid: b40a861c3269934489f47a616588c32d, type: 3}
+  m_PrefabInstance: {fileID: 1333328236}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1049154185
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,6 +1128,18 @@ PrefabInstance:
       value: character-male-b(jalol)
       objectReference: {fileID: 0}
     - target: {fileID: 1898499669838286297, guid: b40a861c3269934489f47a616588c32d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898499669838286297, guid: b40a861c3269934489f47a616588c32d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898499669838286297, guid: b40a861c3269934489f47a616588c32d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898499669838286297, guid: b40a861c3269934489f47a616588c32d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.928881
       objectReference: {fileID: 0}
@@ -1174,6 +1191,10 @@ PrefabInstance:
       propertyPath: itemPrefabs.Array.data[0].prefab
       value: 
       objectReference: {fileID: 919132149155446097, guid: f67bfb096561a054f9fa524695e14be2, type: 3}
+    - target: {fileID: 5436531920385958973, guid: b40a861c3269934489f47a616588c32d, type: 3}
+      propertyPath: holdParent
+      value: 
+      objectReference: {fileID: 996445125}
     m_RemovedComponents:
     - {fileID: 3536390177750557992, guid: b40a861c3269934489f47a616588c32d, type: 3}
     m_RemovedGameObjects: []
@@ -1656,13 +1677,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748241367}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38072d612fec66b4f8472dbd687b23c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUpV2
+  interactRange: 2
   scoreText: {fileID: 0}
-  hold: 0
+  holdParent: {fileID: 0}
+  holdOffset: {x: 0, y: 0, z: 0}
+  colliderArray: []
+  throwForce: 6
+  throwUpwardForce: 2
 --- !u!1 &1922821355
 GameObject:
   m_ObjectHideFlags: 0
