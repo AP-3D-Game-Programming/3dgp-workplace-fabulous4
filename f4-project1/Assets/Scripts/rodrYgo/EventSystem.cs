@@ -16,32 +16,26 @@ public class EventSystem : MonoBehaviour
         Instance = this;
     }
 
-    public event Action OnIntroSpeech;
+    public event Action OnIntroSpeech;   
     public event Action OnIngredientSpeech;
-    public event Action OnMixerSpeech;
-    public event Action OnOvenSpeech;
+    public event Action OnHardwareSpeech;
     public event Action OnOrderSpeech;
     public event Action OnOutroSpeech;
+    public event Action OnNextStep;
 
     public void TriggerIntroSpeech()
     {
-        Debug.Log("Intro speech event triggered.");
         OnIntroSpeech?.Invoke();
-    }
+    }  
 
     public void TriggerIngredientSpeech()
     {
         OnIngredientSpeech?.Invoke();
     }
 
-    public void TriggerMixerSpeech()
+    public void TriggerHardwareSpeech()
     {
-        OnMixerSpeech?.Invoke();
-    }
-
-    public void TriggerOvenSpeech()
-    {
-        OnOvenSpeech?.Invoke();
+        OnHardwareSpeech?.Invoke();
     }
 
     public void TriggerOrderSpeech()
@@ -52,5 +46,10 @@ public class EventSystem : MonoBehaviour
     public void TriggerOutroSpeech()
     {
         OnOutroSpeech?.Invoke();
-    }    
+    }
+
+    public void TriggerNextStep()
+    {
+        OnNextStep?.Invoke();
+    }
 }

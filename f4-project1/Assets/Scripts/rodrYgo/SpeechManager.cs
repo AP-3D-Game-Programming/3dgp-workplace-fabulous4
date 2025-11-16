@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class SpeechManager : MonoBehaviour
@@ -6,62 +7,69 @@ public class SpeechManager : MonoBehaviour
 
     [Header("Speech Clips")]
     public AudioClip introClip;
+    public AudioClip movementClip;
     public AudioClip ingredientClip;
-    public AudioClip mixerClip;
-    public AudioClip ovenClip;
+    public AudioClip hardwareClip;
     public AudioClip orderClip;
     public AudioClip outroClip;
 
     private void Start()
     {
-        Debug.Log("SpeechManager START called");
-        EventSystem.Instance.OnIntroSpeech += PlayIntro;
-        EventSystem.Instance.OnIngredientSpeech += PlayIngredient;
-        EventSystem.Instance.OnMixerSpeech += PlayMixer;
-        EventSystem.Instance.OnOvenSpeech += PlayOven;
-        EventSystem.Instance.OnOrderSpeech += PlayOrder;
+        EventSystem.Instance.OnIntroSpeech += () => StartCoroutine(PlayIntroSequence());
+        EventSystem.Instance.OnIngredientSpeech += () => StartCoroutine(PlayIngredient());
+        EventSystem.Instance.OnHardwareSpeech += () => StartCoroutine(PlayHardware());
+        EventSystem.Instance.OnOrderSpeech += () => StartCoroutine(PlayOrder());
         EventSystem.Instance.OnOutroSpeech += PlayOutro;
     }
 
     private void OnDestroy()
     {
-        EventSystem.Instance.OnIntroSpeech -= PlayIntro;
-        EventSystem.Instance.OnIngredientSpeech -= PlayIngredient;
-        EventSystem.Instance.OnMixerSpeech -= PlayMixer;
-        EventSystem.Instance.OnOvenSpeech -= PlayOven;
-        EventSystem.Instance.OnOrderSpeech -= PlayOrder;
+        EventSystem.Instance.OnIntroSpeech -= () => StartCoroutine(PlayIntroSequence());
+        EventSystem.Instance.OnIngredientSpeech -= () => StartCoroutine(PlayIngredient());
+        EventSystem.Instance.OnHardwareSpeech += () => StartCoroutine(PlayHardware());
+        EventSystem.Instance.OnOrderSpeech -= () => StartCoroutine(PlayOrder());
         EventSystem.Instance.OnOutroSpeech -= PlayOutro;
     }
 
-    private void PlayIntro()
+    private IEnumerator PlayIntroSequence()
     {
-        Debug.Log("Volume: " + narratorSource.volume);
         narratorSource.clip = introClip;
         narratorSource.Play();
-    }
 
-    private void PlayIngredient()
+        yield return new WaitForSeconds(introClip.length);
+
+        narratorSource.clip = movementClip;
+        narratorSource.Play();
+
+        yield return new WaitForSeconds(movementClip.length);
+        EventSystem.Instance.TriggerNextStep();
+    }  
+
+    private IEnumerator PlayIngredient()
     {
         narratorSource.clip = ingredientClip;
         narratorSource.Play();
+
+        yield return new WaitForSeconds(ingredientClip.length);
+        EventSystem.Instance.TriggerNextStep();
     }
 
-    private void PlayMixer()
+    private IEnumerator PlayHardware()
     {
-        narratorSource.clip = mixerClip;
+        narratorSource.clip = hardwareClip;
         narratorSource.Play();
+
+        yield return new WaitForSeconds(hardwareClip.length);
+        EventSystem.Instance.TriggerNextStep();
     }
 
-    private void PlayOven()
-    {
-        narratorSource.clip = ovenClip;
-        narratorSource.Play();
-    }
-
-    private void PlayOrder()
+    private IEnumerator PlayOrder()
     {
         narratorSource.clip = orderClip;
         narratorSource.Play();
+
+        yield return new WaitForSeconds(orderClip.length);
+        EventSystem.Instance.TriggerNextStep();        
     }
 
     private void PlayOutro()
