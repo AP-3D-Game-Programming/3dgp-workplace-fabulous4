@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public enum TutorialStep
@@ -28,6 +29,7 @@ public class TutorialGameManager : MonoBehaviour
     public Dictionary<string, GameObject> walls = new();
     public GameObject cameraObject;
     public float duration = 1f;
+    public GameObject NPCSpawner;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,6 +40,8 @@ public class TutorialGameManager : MonoBehaviour
         }
 
         EventSystem.Instance.OnNextStep += AdvanceStep;
+
+        NPCSpawner.SetActive(false);
     }
 
     // Update is called once per frame
@@ -76,35 +80,62 @@ public class TutorialGameManager : MonoBehaviour
 
     public void StartIngredientStep()
     {
-        DestroyWall("ingredientWall");
+        Debug.Log("Starting ingredient step");
+        CurrentStep = TutorialStep.Ingredients;
+        DeactivateWall("ingredientWall");
         EventSystem.Instance.TriggerIngredientSpeech();
         MoveCamera(10f);
     }
 
     public void StartHardwareStep()
     {
-        DestroyWall("hardwareWall");
+        Debug.Log("Starting hardware step");
+        CurrentStep = TutorialStep.Hardware;
+        DeactivateWall("hardwareWall");
         EventSystem.Instance.TriggerHardwareSpeech();
-        MoveCamera(10f);
+        MoveCamera(5f);
     }    
 
     public void StartOrderStep()
     {
-        DestroyWall("orderWall");
+        Debug.Log("Starting order step");
+        CurrentStep = TutorialStep.Order;
+        DeactivateWall("orderWall");
+
+        if (NPCSpawner == null)
+            Debug.LogError("NPCSpawner REFERENCE IS NULL");
+
+        Debug.Log($"NPCSpawner BEFORE: {NPCSpawner.activeInHierarchy}");
+
+        NPCSpawner.SetActive(true);
+
+        Debug.Log($"NPCSpawner AFTER: {NPCSpawner.activeInHierarchy}");
+
         EventSystem.Instance.TriggerOrderSpeech();
-        MoveCamera(15f, 5f);
+        MoveCamera(20f);
     }    
 
     public void StartOutroStep()
     {
+        Debug.Log("Starting outro step");
+        CurrentStep = TutorialStep.Outro;
         EventSystem.Instance.TriggerOutroSpeech();
+
     }
 
-    public void DestroyWall(string key)
+    public void DeactivateWall(string key)
     {
         if (walls.TryGetValue(key, out GameObject wall))
         {
-            Destroy(wall);
+            wall.SetActive(false);
+        }
+    }
+
+    public void ActivateWall(string key)
+    {
+        if (walls.TryGetValue(key, out GameObject wall))
+        {
+            wall.SetActive(true);
         }
     }
 
