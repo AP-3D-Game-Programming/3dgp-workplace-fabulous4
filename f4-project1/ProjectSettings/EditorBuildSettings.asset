@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/!MAINSCENE-NIET-AANRAKEN.unity
     guid: e2d1c7df32a573d46bf86da7eaf984f4
   - enabled: 0
-    path: Assets/Scenes/MAIN-MENU_Gerben.unity
+    path: Assets/Scenes/StartScreen.unity
     guid: 0a5ff427c1f37ad46a268ddb899289e7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
