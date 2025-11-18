@@ -1,14 +1,32 @@
-using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class ScreenManager : MonoBehaviour
+public enum Scenes
 {
-    void Start()
+    StartScreen,
+    TutorialScene,
+    EndTutorialScreen,
+    GameScreen,
+    EndLevelScreen
+}
+
+public static class ScreenManager
+{
+    public static void LoadScene(Scenes scene)
     {
-        
+        SceneManager.LoadScene(scene.ToString());
     }
 
-    void Update()
+    public static void LoadScene(string scene)
     {
-        
+        SceneManager.LoadScene(scene);
+    }
+
+    public static void QuitGame()
+    {
+    #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+    #else
+        Application.Quit();
+    #endif
     }
 }
