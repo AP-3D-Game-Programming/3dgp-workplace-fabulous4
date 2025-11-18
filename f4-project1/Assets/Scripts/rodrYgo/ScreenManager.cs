@@ -25,8 +25,6 @@ public static class ScreenManager
     {
     #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-    #else
-        Application.Quit();
     #endif
     }
 }
