@@ -88,7 +88,7 @@ public class SpeechManager : MonoBehaviour
         Debug.Log("Starting outro clip");
         narratorSource.clip = outroClip;
         narratorSource.Play();
-        yield return new WaitForSeconds(orderClip.length + 10);
+        yield return new WaitForSeconds(outroClip.length + 10);
         ScreenManager.LoadScene("EndTutorialScreen");
     }
 }
