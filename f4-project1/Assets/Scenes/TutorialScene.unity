@@ -1116,6 +1116,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cabinet_mixer
       objectReference: {fileID: 0}
+    - target: {fileID: 7418793592094481265, guid: 9934eafb471e72d4784e5f4f7c82a519, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

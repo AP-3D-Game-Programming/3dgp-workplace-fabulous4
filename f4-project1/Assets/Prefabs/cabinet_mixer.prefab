@@ -302,11 +302,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8389813902977381723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1eae71217251c04b909ab3c57678d01, type: 3}
+  m_Script: {fileID: 11500000, guid: e5569b00b10331740b73deb32b791da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ovenScript
-  productData: {fileID: 0}
-  parentForProductSpawn: {fileID: 0}
+  productData: {fileID: 11400000, guid: 686aefd538e844e41aeb47394e408c96, type: 2}
+  parentForProductSpawn: {fileID: 7171574277860178665}
 --- !u!135 &7418793592094481265
 SphereCollider:
   m_ObjectHideFlags: 0
