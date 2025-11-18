@@ -19,7 +19,7 @@ public class SpeechManager : MonoBehaviour
         EventSystem.Instance.OnIngredientSpeech += OnIngredient;
         EventSystem.Instance.OnHardwareSpeech += OnHardware;
         EventSystem.Instance.OnOrderSpeech += OnOrder;
-        EventSystem.Instance.OnOutroSpeech += PlayOutro;
+        EventSystem.Instance.OnOutroSpeech += OnOutro;
     }
 
     private void OnDestroy()
@@ -28,13 +28,14 @@ public class SpeechManager : MonoBehaviour
         EventSystem.Instance.OnIngredientSpeech -= OnIngredient;
         EventSystem.Instance.OnHardwareSpeech -= OnHardware;
         EventSystem.Instance.OnOrderSpeech -= OnOrder;
-        EventSystem.Instance.OnOutroSpeech -= PlayOutro;
+        EventSystem.Instance.OnOutroSpeech -= OnOutro;
     }
 
     private void OnIntro() => StartCoroutine(PlayIntroSequence());
     private void OnIngredient() => StartCoroutine(PlayIngredient());
     private void OnHardware() => StartCoroutine(PlayHardware());
     private void OnOrder() => StartCoroutine(PlayOrder());
+    private void OnOutro() => StartCoroutine(PlayOutro());
 
     private IEnumerator PlayIntroSequence()
     {
@@ -82,9 +83,12 @@ public class SpeechManager : MonoBehaviour
         EventSystem.Instance.TriggerNextStep();        
     }
 
-    private void PlayOutro()
+    private IEnumerator PlayOutro()
     {
+        Debug.Log("Starting outro clip");
         narratorSource.clip = outroClip;
         narratorSource.Play();
+        yield return new WaitForSeconds(orderClip.length + 10);
+        ScreenManager.LoadScene("EndTutorialScreen");
     }
 }
